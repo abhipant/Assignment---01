@@ -1,0 +1,7 @@
+2. Display all the Salespeople whose total order worth is more than Rs. 2000:
+
+SELECT SP.Snum, SP.Sname, SP.City, SUM(O.Amt) AS TotalOrderWorth
+FROM SalesPeople SP
+JOIN Orders O ON SP.Snum = O.Snum
+GROUP BY SP.Snum, SP.Sname, SP.City
+HAVING SUM(O.Amt) > 2000;
