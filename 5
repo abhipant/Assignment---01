@@ -1,0 +1,6 @@
+5. Display the number of orders taken by each Salesperson and their date of orders:
+
+SELECT SP.Snum, SP.Sname, COUNT(*) AS OrderCount, O.Odate
+FROM SalesPeople SP
+JOIN Orders O ON SP.Snum = O.Snum
+GROUP BY SP.Snum, SP.Sname, O.Odate;
